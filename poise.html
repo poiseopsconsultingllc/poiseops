@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PoiseOps Consulting LLC | Automation, AI and Analytics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PoiseOps Consulting LLC helps busy professionals, small teams, veteran owned businesses and grant funded or public sector teams automate email, workflows, grants and reporting with AI, Python, SQL and Power Platform so work runs smoothly and life feels lighter.">
+    <style>
+        :root {
+            --bg: #f5f5f7;
+            --bg-alt: #ffffff;
+            --bg-accent: #e0ecff;
+            --text: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --accent: #1d4ed8;
+            --accent-soft: #dbeafe;
+            --nav-bg: #ffffff;
+            --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+            --radius-lg: 18px;
+            --radius-md: 14px;
+            --radius-pill: 999px;
+            --max-width: 1040px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: radial-gradient(circle at top, #e5edff 0, var(--bg) 45%);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* Layout */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0.6rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.05rem;
+        }
+
+        .brand-title {
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .brand-tagline {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            padding-bottom: 0.1rem;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav a:hover {
+            border-color: #9ca3af;
+        }
+
+        .nav-cta {
+            padding: 0.45rem 0.85rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-soft);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.75rem 1.25rem 3rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-label {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .section-title {
+            font-size: 1.55rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 620px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Hero */
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+            gap: 2rem;
+            align-items: center;
+            padding: 1.75rem 1.75rem 2rem;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(239, 246, 255, 0.9), rgba(255, 255, 255, 0.98));
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 2.75rem;
+        }
+
+        .hero-kicker {
+            font-size: 0.87rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 0.85rem;
+        }
+
+        .hero-sub {
+            font-size: 1.02rem;
+            color: #4b5563;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-tools {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.1rem;
+        }
+
+        .hero-list {
+            list-style: none;
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-list li {
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .hero-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 1.4rem;
+            border-radius: var(--radius-pill);
+            border: none;
+            background: var(--accent);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.03);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1.2rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--border);
+            background: #ffffff;
+            color: #374151;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: #f3f4f6;
+        }
+
+        .hero-note {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .hero-aside {
+            position: relative;
+            height: 100%;
+            min-height: 180px;
+        }
+
+        .hero-badge {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 20%, #bfdbfe 0, #1d4ed8 18%, #111827 60%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e5e7eb;
+            text-align: center;
+            padding: 1.4rem;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.65);
+        }
+
+        .hero-badge span {
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #93c5fd;
+        }
+
+        .hero-badge strong {
+            display: block;
+            font-size: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Cards and grids */
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .grid-5 {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+
+        .card {
+            background: var(--bg-alt);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            padding: 1rem 1rem 0.6rem;
+            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.03);
+        }
+
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .card-sub {
+            font-size: 0.87rem;
+            color: var(--muted);
+        }
+
+        .card-body {
+            display: none;
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-top: 0.55rem;
+        }
+
+        .card-body ul {
+            list-style: disc;
+            padding-left: 1.1rem;
+            margin-top: 0.4rem;
+        }
+
+        .card-body li {
+            margin-bottom: 0.25rem;
+        }
+
+        .card-toggle {
+            margin-top: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        .toggle-card {
+            cursor: pointer;
+            transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+        }
+
+        .toggle-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+            border-color: #cbd5f5;
+        }
+
+        .toggle-card.is-open {
+            background: #f9fafb;
+            border-color: #cbd5f5;
+        }
+
+        .toggle-card.is-open .card-body {
+            display: block;
+        }
+
+        /* Founding offer band */
+
+        .offer {
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 1.6rem;
+            background: radial-gradient(circle at top left, #dbeafe 0, #eff6ff 40%, #ffffff 80%);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .offer-title {
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .offer-body {
+            font-size: 0.98rem;
+            color: #374151;
+            max-width: 720px;
+            margin-bottom: 0.75rem;
+        }
+
+        .offer-body p {
+            margin-bottom: 0.7rem;
+        }
+
+        .offer-list {
+            list-style: disc;
+            padding-left: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .offer-list li {
+            margin-bottom: 0.3rem;
+        }
+
+        .offer-footnote {
+            font-size: 0.87rem;
+            color: var(--muted);
+        }
+
+        /* Process */
+
+        .steps {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .step {
+            background: var(--bg-alt);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.03);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.55rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .step-number {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .step-tagline {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .step-body {
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        .step-body ul {
+            list-style: disc;
+            padding-left: 1.1rem;
+            margin-top: 0.4rem;
+        }
+
+        .step-body li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* About */
+
+        .about {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+            gap: 1.75rem;
+        }
+
+        .about-block p {
+            margin-bottom: 0.7rem;
+            font-size: 0.95rem;
+            color: #374151;
+        }
+
+        .about-list {
+            list-style: disc;
+            padding-left: 1.1rem;
+            font-size: 0.92rem;
+            color: #374151;
+        }
+
+        .about-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Testimonials */
+
+        .testimonials {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .testimonial-card {
+            background: var(--bg-alt);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.1rem;
+            border: 1px dashed var(--border);
+            color: #4b5563;
+            font-size: 0.92rem;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .testimonial-meta {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-bottom: 0.45rem;
+        }
+
+        .quote {
+            font-style: italic;
+        }
+
+        /* Contact */
+
+        .contact {
+            background: #020617;
+            color: #e5e7eb;
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 1.7rem;
+            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.8);
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .contact-body {
+            font-size: 0.98rem;
+            margin-bottom: 1rem;
+            color: #e5e7eb;
+        }
+
+        .contact-body p {
+            margin-bottom: 0.6rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-pill);
+            background: #f9fafb;
+            color: #111827;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-email:hover {
+            background: #e5e7eb;
+        }
+
+        .contact-note {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem 1.25rem 0.5rem;
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .hero-aside {
+                display: none;
+            }
+            .about {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .grid-3, .grid-5 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 0.75rem;
+            }
+            .hero {
+                padding: 1.5rem 1.2rem 1.6rem;
+            }
+            .hero-title {
+                font-size: 1.85rem;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .grid-2, .grid-3, .grid-5 {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-inner">
+        <div class="brand">
+            <div class="brand-title">POISEOPS CONSULTING LLC</div>
+            <div class="brand-tagline">Point of control at your fingertips</div>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#fit">Who I help</a>
+            <a href="#services">Services</a>
+            <a href="#process">How it works</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-cta">Get in touch</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div>
+            <div class="hero-kicker">You are supposed to be the point of control, not the bottleneck.</div>
+            <h1 class="hero-title">Bring your work back into Poise.</h1>
+            <p class="hero-sub">
+                PoiseOps Consulting LLC helps busy professionals, small teams, veteran owned businesses and grant funded
+                or public sector teams automate email, workflows, proposals, grants and reporting with AI, Python and SQL
+                so your work runs smoothly and life feels lighter.
+            </p>
+            <p class="hero-tools">
+                I work with tools like Outlook, Gmail, Google Workspace, Excel, Power Query, Power BI, Power Automate,
+                SQL and web technologies like HTML, CSS and JavaScript, plus custom Python automations that fit how you actually work.
+            </p>
+            <ul class="hero-list">
+                <li><span class="hero-dot"></span> Email and inbox systems that stop running your day</li>
+                <li><span class="hero-dot"></span> Proposal and grant workflows that stop slipping through the cracks</li>
+                <li><span class="hero-dot"></span> Dashboards and forecasts that help you prepare for slow seasons and surprises</li>
+            </ul>
+            <div class="hero-actions">
+                <a class="btn-primary" href="mailto:contact@poiseops.com">Email me to get started</a>
+                <a class="btn-secondary" href="#fit">See if PoiseOps is right for you</a>
+                <span class="hero-note">Mention “go big” if you are interested in the founding client offer.</span>
+            </div>
+        </div>
+        <div class="hero-aside">
+            <div class="hero-badge">
+                <div>
+                    <span>POISEOPS</span>
+                    <strong>Your work in flow, not in flames.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO I HELP / FIT -->
+    <section id="fit">
+        <div class="section-label">Who I help</div>
+        <h2 class="section-title">Is PoiseOps right for you.</h2>
+        <p class="section-intro">
+            Click or tap a group to see how PoiseOps could help in your world.
+            Veteran owned businesses and public sector or grant funded teams are especially welcome.
+        </p>
+        <div class="grid grid-2">
+            <!-- Group 1 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Group</div>
+                    <div class="card-title">Service businesses</div>
+                    <div class="card-sub">Restaurants, trades, clinics, salons, agencies and more</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        If your workday is a blur of bookings, customer messages, invoices and follow ups,
+                        PoiseOps can help you:
+                    </p>
+                    <ul>
+                        <li>Organize and automate email around reservations, orders and client messages</li>
+                        <li>Set up simple flows for intake, reminders and feedback requests</li>
+                        <li>Use tools like Power Automate and low code connectors to reduce manual admin</li>
+                        <li>Get a clear view of weekly revenue, visits and key numbers without digging through spreadsheets</li>
+                    </ul>
+                </div>
+                <div class="card-toggle">Click or tap to see how this fits you</div>
+            </article>
+            <!-- Group 2 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Group</div>
+                    <div class="card-title">Nonprofits, universities and research teams</div>
+                    <div class="card-sub">Grants, sponsors, compliance and reporting</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        If you live in sponsored projects and deadlines, PoiseOps can help you:
+                    </p>
+                    <ul>
+                        <li>Map and streamline the steps from idea to submitted proposal</li>
+                        <li>Reuse strong language and budget structures instead of starting from zero each time</li>
+                        <li>Track due dates, sponsor requirements and approvals in a simple, visible way</li>
+                        <li>Clean up grant and financial reporting so it is accurate and less last minute</li>
+                        <li>Model basic rainy day and funding pause scenarios so leadership is not flying blind</li>
+                    </ul>
+                </div>
+                <div class="card-toggle">Click or tap to see how this fits you</div>
+            </article>
+            <!-- Group 3 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Group</div>
+                    <div class="card-title">Operations, finance and analytics leaders</div>
+                    <div class="card-sub">Email, approvals, Excel, SQL and dashboards</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        If you are the person who keeps everything moving, PoiseOps can help you:
+                    </p>
+                    <ul>
+                        <li>Reduce manual follow ups and status chasing through practical automation</li>
+                        <li>Connect Excel and SQL data into Power BI or Tableau so reports pull the right numbers automatically</li>
+                        <li>Standardize recurring reports so you stop rebuilding the same thing every month</li>
+                        <li>Surface overhead, cash flow and runway in simple dashboards so you can plan for slow periods</li>
+                    </ul>
+                </div>
+                <div class="card-toggle">Click or tap to see how this fits you</div>
+            </article>
+            <!-- Group 4 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Group</div>
+                    <div class="card-title">Teams ready to use AI in real work</div>
+                    <div class="card-sub">Curious about AI but not sure where to start</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        If you want to use AI without turning your job into a science project, PoiseOps can help you:
+                    </p>
+                    <ul>
+                        <li>Use AI for email triage, drafting and cleanup in a way that still sounds like you</li>
+                        <li>Build small, realistic automations around proposals, documents and reports</li>
+                        <li>Use low code tools like Power Automate, and connectors like Zapier, where they actually help</li>
+                        <li>Decide where AI belongs in your workflows and where it does not so you stay in control</li>
+                    </ul>
+                </div>
+                <div class="card-toggle">Click or tap to see how this fits you</div>
+            </article>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-label">Services</div>
+        <h2 class="section-title">What I fix for you</h2>
+        <p class="section-intro">
+            Pick the area that hurts the most. That is where we start.
+        </p>
+
+        <div class="grid grid-2">
+            <!-- Service 1 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Service</div>
+                    <div class="card-title">Email and communication systems</div>
+                    <div class="card-sub">Your inbox stops running your day.</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        If you feel your shoulders tense every time you open Outlook or Gmail, this is for you.
+                        I help you turn a noisy inbox into a calm control center:
+                    </p>
+                    <ul>
+                        <li>Smart rules and structure so the right messages surface at the right time</li>
+                        <li>Follow up and reminder systems so nothing important slips away</li>
+                        <li>Templates and AI assisted drafts for the replies you send over and over</li>
+                        <li>Flows with tools like Power Automate that move important items into tasks, calendars or trackers</li>
+                    </ul>
+                    <p>You still see what matters. You stop living in your inbox.</p>
+                </div>
+                <div class="card-toggle">Click or tap to see details</div>
+            </article>
+
+            <!-- Service 2 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Service</div>
+                    <div class="card-title">Proposal, grant and finance workflows</div>
+                    <div class="card-sub">Big money work without the constant scramble.</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Proposals and grants are where pressure and complexity collide.
+                        With more than ten years in grants, finance and accounting inside universities and schools of medicine,
+                        I know the world you are in.
+                    </p>
+                    <p>Here is what we make easier:</p>
+                    <ul>
+                        <li>Clear paths from idea to submitted proposal instead of reinventing the wheel every time</li>
+                        <li>Reusable language, budget shapes and justification structures that save hours</li>
+                        <li>Simple tracking for deadlines, approvals and sponsor requirements</li>
+                        <li>Processes that let you handle more grants and contracts without adding a ton of overhead</li>
+                        <li>Financial and grant reporting that does not require a last minute rescue every cycle</li>
+                    </ul>
+                    <p>You still own the strategy and the relationships. The system carries more of the weight.</p>
+                </div>
+                <div class="card-toggle">Click or tap to see details</div>
+            </article>
+
+            <!-- Service 3 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Service</div>
+                    <div class="card-title">Dashboards, reporting and data cleanup</div>
+                    <div class="card-sub">Your numbers finally tell a clear story.</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        You should not need ten spreadsheets open just to answer a basic question.
+                        I use Excel, Power Query, SQL, Power BI and Tableau to turn scattered data
+                        into something you can actually trust and read.
+                    </p>
+                    <p>Typical results:</p>
+                    <ul>
+                        <li>Dashboards that show revenue, grants, operations or performance at a glance</li>
+                        <li>Data that is cleaned and structured so reports are repeatable instead of rebuilt from scratch</li>
+                        <li>Connections between SQL data and spreadsheets so the right numbers flow where they should</li>
+                        <li>Forecasts and “what if” views for slow months, delayed payments or funding pauses</li>
+                        <li>Simple views of cash runway so a bad quarter, late grant or government shutdown is stressful but not a full crisis</li>
+                    </ul>
+                    <p>Less hunting for numbers. More decisions made with a calm mind.</p>
+                </div>
+                <div class="card-toggle">Click or tap to see details</div>
+            </article>
+
+            <!-- Service 4 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Service</div>
+                    <div class="card-title">AI and automation coaching</div>
+                    <div class="card-sub">Use AI without turning your job into a science project.</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        You do not need another hype talk about artificial intelligence.
+                        You need someone to sit beside you, say “show me what your actual workday looks like,”
+                        then shape AI and automation around that.
+                    </p>
+                    <p>Coaching can include:</p>
+                    <ul>
+                        <li>One on one or small team sessions where we work inside your real tools</li>
+                        <li>Practical use of AI for email triage, writing, cleanup and brainstorming</li>
+                        <li>Small, realistic automations around proposals, documents and reports</li>
+                        <li>Clear rules for when AI makes sense and when it does not</li>
+                        <li>Simple, honest guidance on privacy and risk so you can use AI without losing sleep</li>
+                    </ul>
+                    <p>You stay the expert. AI just becomes a very fast assistant.</p>
+                </div>
+                <div class="card-toggle">Click or tap to see details</div>
+            </article>
+
+            <!-- Service 5 -->
+            <article class="card toggle-card">
+                <div class="card-header">
+                    <div class="card-label">Service</div>
+                    <div class="card-title">Custom Python, SQL and web system glue</div>
+                    <div class="card-sub">When nothing off the shelf quite fits.</div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Sometimes the thing you need does not exist in a menu or plugin.
+                        That is where light custom work helps.
+                    </p>
+                    <p>I build small, targeted pieces that connect the dots:</p>
+                    <ul>
+                        <li>Python scripts that move data, clean it and line it up for reporting</li>
+                        <li>SQL queries and views that feed your dashboards with clean, ready data</li>
+                        <li>Lightweight web components and automations using HTML, CSS and JavaScript when your workflows touch the browser</li>
+                        <li>Links between email, spreadsheets, databases, Power Automate flows and reporting tools so work flows instead of getting stuck</li>
+                        <li>Little internal utilities that make your specific world feel smoother without a giant platform</li>
+                    </ul>
+                    <p>You do not get a huge system that takes months to learn. You get exactly what is missing and nothing extra.</p>
+                </div>
+                <div class="card-toggle">Click or tap to see details</div>
+            </article>
+        </div>
+
+        <p class="section-intro" style="margin-top: 1.6rem;">
+            I focus on tools most teams already use and connect them so they work together instead of against you:
+            Outlook, Gmail, Google Workspace, Excel, Power Query, Power Automate, SQL, Power BI, Tableau, AI and Python,
+            plus low code tools and connectors where they make sense.
+        </p>
+    </section>
+
+    <!-- FOUNDING CLIENT OFFER -->
+    <section id="offer">
+        <div class="section-label">Founding client offer</div>
+        <div class="offer">
+            <h2 class="offer-title">Go big or go home: be a founding client</h2>
+            <div class="offer-body">
+                <p>
+                    You know that feeling when you open your inbox or a spreadsheet and your chest gets just a tiny bit tighter.
+                    That quiet “how am I supposed to keep doing this every day” feeling.
+                </p>
+                <p>
+                    PoiseOps exists for that exact moment.
+                    To launch PoiseOps Consulting LLC, I am opening a founding client group.
+                    A small set of businesses and teams where the first area of work we fix together receives special founding client pricing.
+                </p>
+                <p>
+                    Founding client pricing means your first project is scoped with a lower, one time rate than what I will charge later.
+                    It is my way of rewarding early trust and building relationships that last longer than one invoice.
+                </p>
+                <p>Think of it as a trade:</p>
+                <ul class="offer-list">
+                    <li>You let me into the mess. The inbox that never stops, the proposals that always run late, the grants and reports that live in a thousand places.</li>
+                    <li>I design and build a calmer, automated system around it.</li>
+                    <li>You get your time, mental space and a little more margin in your week.</li>
+                </ul>
+                <p>This might look like:</p>
+                <ul class="offer-list">
+                    <li>A restaurant finally getting reservation and order emails under control</li>
+                    <li>A service business automating intake, follow ups and reminders so they can serve more people with the same staff</li>
+                    <li>A grant or finance team turning a painful reporting process into a repeatable flow</li>
+                    <li>A leader who stops living in email thanks to smart rules and AI assisted workflows</li>
+                </ul>
+                <p>
+                    In return, I ask for honest feedback, a testimonial if you are genuinely happy with the results
+                    and real word of mouth, the kind you would give a friend who finally made your workday easier.
+                </p>
+            </div>
+            <div class="offer-footnote">
+                If you want to be one of the first, email me and include the words “go big”.
+                Tell me what part of your work feels heaviest right now, email, proposals, grants, reporting or all of it,
+                and we will see if PoiseOps can be your new point of control.
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="process">
+        <div class="section-label">Process</div>
+        <h2 class="section-title">How PoiseOps works</h2>
+        <p class="section-intro">
+            This is not a giant consulting project. It is a focused, step by step reset of how your work flows.
+        </p>
+        <div class="steps">
+            <!-- Step 1 -->
+            <article class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Discovery</div>
+                </div>
+                <div class="step-tagline">We get honest about what is actually happening in your day.</div>
+                <div class="step-body">
+                    <p>
+                        We start with a short call or screen share where you walk me through real life, not the polished version:
+                    </p>
+                    <ul>
+                        <li>How your email looks when you open it on a busy morning</li>
+                        <li>Where proposals, grants or approvals keep getting stuck</li>
+                        <li>Which spreadsheets, databases or dashboards you have to open just to answer basic questions</li>
+                    </ul>
+                    <p>
+                        You talk and share your screen. I ask questions.
+                        Together we find the few spots that are doing the most damage to your time, budget and energy.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Step 2 -->
+            <article class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Design</div>
+                </div>
+                <div class="step-tagline">We sketch what a calmer version of your workday looks like.</div>
+                <div class="step-body">
+                    <p>
+                        Next, I turn what we saw into a clear, simple plan.
+                        Nothing heavy, no fifty page document, just a practical map that answers:
+                    </p>
+                    <ul>
+                        <li>What can stay manual and what should be automated</li>
+                        <li>Which tools we will lean on, like Outlook, Gmail, Google Workspace, Excel, SQL, Power Query, Power BI, Power Automate and Python</li>
+                        <li>What the new flow will be from incoming work through decisions to reporting</li>
+                        <li>What success looks like in plain language, including time saved and overhead avoided</li>
+                    </ul>
+                    <p>
+                        You see the plan, you ask questions and we adjust until it feels realistic and safe,
+                        not like some theoretical system you will hate in a week.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Step 3 -->
+            <article class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Build</div>
+                </div>
+                <div class="step-tagline">I do the heavy lifting so you can keep doing your actual job.</div>
+                <div class="step-body">
+                    <p>
+                        Once the plan is clear, I go build. Depending on what you need, that might include:
+                    </p>
+                    <ul>
+                        <li>Reworking inbox rules, folders and labels so important messages stand out</li>
+                        <li>Creating templates, automations and AI assisted workflows around email, proposals and grants</li>
+                        <li>Cleaning data, writing SQL and wiring up dashboards in Power BI or Tableau</li>
+                        <li>Setting up small Python scripts or low code flows so information moves between your tools without copy paste</li>
+                    </ul>
+                    <p>
+                        You do not have to manage the technical details.
+                        You just test with me as we go and tell me if it feels right.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Step 4 -->
+            <article class="step">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Poise and tuning</div>
+                </div>
+                <div class="step-tagline">We launch, watch it in real life and adjust until it truly supports you.</div>
+                <div class="step-body">
+                    <p>
+                        When everything is in place, we turn it on in your real world.
+                        For a period after launch, I stay close so we can:
+                    </p>
+                    <ul>
+                        <li>Fix any rough edges that only show up once people start using the new flow</li>
+                        <li>Adjust rules, timing and reports so they match how your team actually behaves</li>
+                        <li>Add light documentation or quick videos so you and your team feel confident</li>
+                    </ul>
+                    <p>
+                        The goal is not just to ship a system. The goal is that a month from now you feel calmer,
+                        more in control and less buried, even if funding slows or the news gets weird.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-label">About</div>
+        <h2 class="section-title">About PoiseOps Consulting LLC</h2>
+        <div class="about">
+            <div class="about-block">
+                <p>
+                    PoiseOps started with a simple question.
+                    What if your workday did not have to feel like constant catch up.
+                </p>
+                <p>
+                    Before launching PoiseOps, I spent more than a decade in grants, finance and accounting inside
+                    universities and schools of medicine. I lived in the world of sponsored projects, shifting requirements,
+                    tight deadlines and messy handoffs between departments.
+                    I have worked with federal, state, local, public and private sponsors and I know what it is like
+                    to be the person who has to make the numbers, the narrative and the timeline all line up.
+                </p>
+                <p>
+                    Over those years, I became the systems person by necessity.
+                    I built and fixed workflows in Excel, Power Query, SQL, Power BI and Tableau,
+                    then moved into Python, AI and automation to stop doing the same manual tasks over and over.
+                    PoiseOps is the result of that journey, a way to use what I learned to make other people’s workdays calmer,
+                    clearer and more sustainable.
+                </p>
+                <p>
+                    I come from a military family and I have a deep respect for people who serve and for the people
+                    who keep public, grant funded and community work going behind the scenes.
+                    PoiseOps is veteran friendly and comfortable in government, university and nonprofit environments
+                    where rules, funding cycles and compliance actually matter.
+                </p>
+            </div>
+            <div class="about-block">
+                <p><strong>Why work with PoiseOps.</strong></p>
+                <ul class="about-list">
+                    <li><strong>I have lived on your side of the screen.</strong> I understand grants, budgets, sponsors, finance and reporting from the inside, not just as abstract data.</li>
+                    <li><strong>I speak both money and machines.</strong> I connect your real world constraints with tools like Python, SQL, HTML, CSS, JavaScript, Excel, Power Query, Power Automate, Power BI and Tableau.</li>
+                    <li><strong>I build on what you already use.</strong> Outlook, Gmail, Google Workspace and your existing data are the starting point, not something to be thrown away.</li>
+                    <li><strong>The goal is poise, not more hustle.</strong> Every decision we make is guided by one question. Does this give you more control and more breathing room, or does it just add noise.</li>
+                    <li><strong>You get founder attention.</strong> The same person who listens to your problems designs your workflows, writes your SQL and Python and tunes your dashboards and automations.</li>
+                    <li><strong>Pricing is fair and right sized.</strong> I focus on projects that pay for themselves in time, clarity or overhead saved rather than trying to sell you a giant retainer you do not need.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-title">Results and stories</h2>
+        <div class="testimonials">
+            <!-- Testimonial 1: Clean Impact -->
+            <article class="testimonial-card">
+                <div class="testimonial-name">Clean Impact LLC</div>
+                <div class="testimonial-meta">Automation and workflow build in progress</div>
+                <p class="quote">
+                    “We are in the middle of tightening up Clean Impact’s systems with PoiseOps.
+                    Once the automations are live and the dust settles, this is where their story will go.”
+                </p>
+            </article>
+
+            <!-- Testimonial 2: Carmen -->
+            <article class="testimonial-card">
+                <div class="testimonial-name">Carmen Garcia</div>
+                <div class="testimonial-meta">Anschutz Medical Campus, AI coaching and Excel</div>
+                <p class="quote">
+                    “Before working with Steven, Excel honestly intimidated me. Pivot tables and macros felt like something only ‘real data people’ could use.
+                    He slowed everything down, explained the why as much as the how and never made me feel stupid for asking basic questions.
+                    Now I build my own pivot tables, run macros and keep learning new tricks every session.”
+                </p>
+            </article>
+
+            <!-- Testimonial 3: Anonymous admin -->
+            <article class="testimonial-card">
+                <div class="testimonial-name">Anonymous</div>
+                <div class="testimonial-meta">Department Administrator, Cost Reimbursable Awards</div>
+                <p class="quote">
+                    “Working with PoiseOps opened my eyes.
+                    I realized I could automate our reconciliation process for all cost reimbursable awards in the department
+                    instead of doing it by hand every month.”
+                </p>
+            </article>
+
+            <!-- Testimonial 4: Founding clients -->
+            <article class="testimonial-card">
+                <div class="testimonial-name">Founding client stories</div>
+                <div class="testimonial-meta">More results on the way</div>
+                <p class="quote">
+                    “I am working with my first group of founding clients right now.
+                    As projects wrap up, this is where you will see their stories,
+                    how much time they got back and what PoiseOps made possible for them.”
+                </p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6b7280;">
+                    Want to be one of the first stories here. Mention “go big” when you reach out.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact">
+            <h2 class="contact-title">Ready to bring your work back into Poise.</h2>
+            <div class="contact-body">
+                <p>
+                    If you are tired of living in your inbox, chasing grants and approvals or rebuilding the same reports every month,
+                    let us fix the system instead of just the symptoms.
+                </p>
+                <p>
+                    Email me with a short description of what feels heaviest right now, email, proposals, grants, reporting or all of it.
+                    If you are a veteran owned business, nonprofit or public sector team, feel free to mention that.
+                    If you would like to be considered as a founding client, include the words “go big” in your message.
+                </p>
+            </div>
+            <a class="contact-email" href="mailto:contact@poiseops.com">
+                contact@poiseops.com
+            </a>
+            <div class="contact-note">
+                I reply personally. No bots, no giant intake forms.
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © <span id="year"></span> PoiseOps Consulting LLC. All rights reserved.
+</footer>
+
+<script>
+    // Keep the footer year updated
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple toggle for cards (groups and services)
+    document.querySelectorAll(".toggle-card").forEach(function (card) {
+        card.addEventListener("click", function () {
+            var parentSection = card.closest("section");
+            if (parentSection) {
+                parentSection.querySelectorAll(".toggle-card").forEach(function (other) {
+                    if (other !== card) {
+                        other.classList.remove("is-open");
+                    }
+                });
+            }
+            card.classList.toggle("is-open");
+        });
+    });
+</script>
+</body>
+</html>

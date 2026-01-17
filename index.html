@@ -7,6 +7,53 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="PoiseOps Consulting LLC helps busy professionals, small teams, veteran owned businesses and grant funded or public sector teams automate email, workflows, grants and reporting with AI, Python, SQL and Power Platform so work runs smoothly and life feels lighter." name="description"/>
 <link href="https://poiseops.com/" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#111827" name="theme-color"/>
+<meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN"/>
+<meta name="msvalidate.01" content="REPLACE_WITH_BING_WEBMASTER_TOKEN"/>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
+<script>
+    (function () {
+      // Client-side canonicalization fallback.
+      // Best practice is a 301/308 redirect at Cloudflare, but this prevents "www" and "http" variants
+      // from lingering if someone hits them directly.
+      var desiredHost = "poiseops.com";
+      var desiredProtocol = "https:";
+      var host = window.location.hostname;
+
+      // Skip local files / unknown hosts
+      if (!host) return;
+
+      // Only run for poiseops.com and www.poiseops.com
+      var isPoiseDomain = host === desiredHost || host === ("www." + desiredHost);
+      if (!isPoiseDomain) return;
+
+      var path = window.location.pathname || "/";
+
+      // Clean /index.html -> /
+      if (path.endsWith("/index.html")) {
+        path = path.slice(0, -("index.html".length));
+        if (!path) path = "/";
+      }
+
+      var needsRedirect =
+        window.location.protocol !== desiredProtocol ||
+        host !== desiredHost ||
+        window.location.pathname !== path;
+
+      if (needsRedirect) {
+        var target = desiredProtocol + "//" + desiredHost + path + window.location.search + window.location.hash;
+        window.location.replace(target);
+      }
+    })();
+    </script>
+
+
+
 <!-- Open Graph (LinkedIn, Facebook, etc.) -->
 <meta content="website" property="og:type"/>
 <meta content="PoiseOps Consulting LLC" property="og:site_name"/>
@@ -739,7 +786,7 @@
 </ul>
 <!-- UPDATED CTA SECTION (only change in this file) -->
 <div class="hero-actions">
-<a class="btn-primary" href="mailto:contact@poiseops.com">Email me to get started</a>
+<a class="btn-primary" href="mailto:contact@poiseops.com?subject=PoiseOps%20-%20New%20project%20inquiry&amp;body=Hi%20Steven%2C%0A%0AI%20found%20you%20via%20poiseops.com%20and%20I%27d%20like%20help%20with%3A%0A%0A1%29%20%0A%0ABusiness%2Fteam%3A%0ALocation%20%28CO%20or%20elsewhere%29%3A%0ATools%20%28Outlook%2FGmail%2FExcel%2Fetc.%29%3A%0ATimeline%3A%0A%0AIf%20this%20is%20for%20the%20founding%20client%20offer%2C%20I%27ll%20include%3A%20go%20big%0A%0AThanks%2C%0A" aria-label="Email PoiseOps to get started">Email me to get started</a>
 <a class="btn-secondary" href="mailto:contact@poiseops.com?subject=PoiseOps%20QuickScan%20(15%20min)&amp;body=Hi%20Steven%2C%0A%0AI%27d%20like%20to%20book%20a%2015-minute%20QuickScan.%0A%0AWhat%20feels%20heaviest%20right%20now%3F%0A-%20Inbox%20/%20email%0A-%20Proposals%20/%20grants%0A-%20Reporting%20/%20dashboards%0A-%20Other%3A%0A%0ATeam%20size%3A%0ATools%20(Outlook%2FGmail%2FExcel%2FPower%20BI%2Fetc)%3A%0ATimezone%3A%0ABest%20times%20this%20week%3A%0A1)%0A2)%0A3)%0A">
                     Book a 15‑min QuickScan
                 </a>
@@ -1233,7 +1280,7 @@
                     If you would like to be considered as a founding client, include the words “go big” in your message.
                 </p>
 </div>
-<a class="contact-email" href="mailto:contact@poiseops.com">
+<a class="contact-email" href="mailto:contact@poiseops.com?subject=PoiseOps%20-%20New%20project%20inquiry&amp;body=Hi%20Steven%2C%0A%0AI%20found%20you%20via%20poiseops.com%20and%20I%27d%20like%20help%20with%3A%0A%0A1%29%20%0A%0ABusiness%2Fteam%3A%0ALocation%20%28CO%20or%20elsewhere%29%3A%0ATools%20%28Outlook%2FGmail%2FExcel%2Fetc.%29%3A%0ATimeline%3A%0A%0AIf%20this%20is%20for%20the%20founding%20client%20offer%2C%20I%27ll%20include%3A%20go%20big%0A%0AThanks%2C%0A" aria-label="Email contact@poiseops.com">
                 contact@poiseops.com
             </a>
 <div class="contact-note">

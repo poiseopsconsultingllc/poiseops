@@ -5,16 +5,14 @@
 <meta charset="utf-8"/>
 <title>PoiseOps Consulting LLC | Software, Automation, AI and Analytics</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="PoiseOps Consulting LLC builds custom software, automation, AI, dashboards, SEO and business formation for busy professionals, small teams, veteran owned businesses and grant funded or public sector teams. Built on Python, SQL and JavaScript, so your work runs smoothly and life feels lighter." name="description"/>
+<meta content="PoiseOps Consulting LLC builds custom software, automation, AI, dashboards, SEO and business formation for busy professionals, small teams, veteran owned businesses and grant funded or public sector teams. Founder built, and creator of the HumbleSuite business platform." name="description"/>
 <link href="https://poiseops.com/" rel="canonical"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='15' fill='none' stroke='%231d4ed8' stroke-width='3'/%3E%3Ccircle cx='24' cy='24' r='4.5' fill='%23111827'/%3E%3Ccircle cx='34.6' cy='13.4' r='4.5' fill='%231d4ed8'/%3E%3C/svg%3E" type="image/svg+xml"/>
 <link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/site.webmanifest" rel="manifest"/>
-<link rel="prefetch" href="/404.html"/>
 <meta content="#111827" name="theme-color"/>
 <meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN"/>
-<meta name="msvalidate.01" content="REPLACE_WITH_BING_WEBMASTER_TOKEN"/>
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
 <script>
     (function () {
@@ -25,25 +23,16 @@
       var isPoiseDomain = host === desiredHost || host === ("www." + desiredHost);
       if (!isPoiseDomain) return;
       var path = window.location.pathname || "/";
-      if (path.endsWith("/index.html")) {
-        path = path.slice(0, -("index.html".length));
-        if (!path) path = "/";
-      }
-      var needsRedirect =
-        window.location.protocol !== desiredProtocol ||
-        host !== desiredHost ||
-        window.location.pathname !== path;
-      if (needsRedirect) {
-        var target = desiredProtocol + "//" + desiredHost + path + window.location.search + window.location.hash;
-        window.location.replace(target);
+      if (path.endsWith("/index.html")) { path = path.slice(0, -("index.html".length)); if (!path) path = "/"; }
+      if (window.location.protocol !== desiredProtocol || host !== desiredHost || window.location.pathname !== path) {
+        window.location.replace(desiredProtocol + "//" + desiredHost + path + window.location.search + window.location.hash);
       }
     })();
     </script>
-<!-- Open Graph -->
 <meta content="website" property="og:type"/>
 <meta content="PoiseOps Consulting LLC" property="og:site_name"/>
 <meta content="PoiseOps Consulting LLC | Software, Automation, AI and Analytics" property="og:title"/>
-<meta content="Custom software, automation, AI and analytics to bring your work back into Poise. Founder built. Creator of HumbleSuite, the all-in-one business platform." property="og:description"/>
+<meta content="Custom software, automation, AI and analytics to bring your work back into Poise. Founder built. Creator of HumbleSuite." property="og:description"/>
 <meta content="https://poiseops.com/" property="og:url"/>
 <meta content="https://poiseops.com/assets/og/poiseops-og.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
@@ -65,175 +54,7 @@
       "contactPoint": [ { "@type": "ContactPoint", "contactType": "sales", "email": "contact@poiseops.com" } ]
     }
     </script>
-<style>
-        :root {
-            --bg: #f5f5f7;
-            --bg-alt: #ffffff;
-            --text: #111827;
-            --muted: #6b7280;
-            --border: #e5e7eb;
-            --accent: #1d4ed8;
-            --accent-soft: #dbeafe;
-            --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
-            --radius-lg: 18px;
-            --radius-md: 14px;
-            --radius-pill: 999px;
-            --max-width: 1040px;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.6; color: var(--text);
-            background: radial-gradient(circle at top, #e5edff 0, var(--bg) 45%);
-        }
-        a { color: inherit; }
-
-        header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(229,231,235,0.8); }
-        .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0.6rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-        .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-        .brand-mark { flex-shrink: 0; display: block; }
-        .brand-text { display: flex; flex-direction: column; gap: 0.02rem; }
-        .brand-title { font-weight: 700; font-size: 1.08rem; letter-spacing: -0.01em; color: var(--text); line-height: 1.1; }
-        .brand-tagline { font-size: 0.72rem; color: var(--muted); }
-        nav { display: flex; align-items: center; gap: 1.1rem; font-size: 0.9rem; }
-        nav a { text-decoration: none; color: #374151; padding-bottom: 0.1rem; border-bottom: 1px solid transparent; }
-        nav a:hover { border-color: #9ca3af; }
-        .nav-cta { padding: 0.45rem 0.85rem; border-radius: var(--radius-pill); border: 1px solid var(--accent); color: var(--accent); font-weight: 600; text-decoration: none; font-size: 0.85rem; }
-        .nav-cta:hover { background: var(--accent-soft); }
-
-        main { max-width: var(--max-width); margin: 0 auto; padding: 1.75rem 1.25rem 1rem; }
-        section { margin-bottom: 3.25rem; scroll-margin-top: 84px; }
-        .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
-        .section-label { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 0.3rem; }
-        .section-title { font-size: 1.55rem; }
-        .section-intro { color: var(--muted); max-width: 620px; }
-
-        /* Hero */
-        .hero { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 2rem; align-items: center; padding: 2rem 1.9rem; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(239,246,255,0.9), rgba(224,236,255,0.6), rgba(255,255,255,0.98)); background-size: 220% 220%; animation: heroShift 16s ease infinite; box-shadow: var(--shadow-soft); margin-bottom: 2.5rem; }
-        @keyframes heroShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-        .hero-kicker { font-size: 0.87rem; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; min-height: 1.2em; transition: opacity 0.3s ease; }
-        .hero-title { font-size: 2.3rem; line-height: 1.18; margin-bottom: 0.85rem; }
-        .hero-sub { font-size: 1.02rem; color: #4b5563; margin-bottom: 1.2rem; }
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
-        .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 0.7rem 1.4rem; border-radius: var(--radius-pill); border: none; background: var(--accent); color: #fff; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: transform 0.12s ease, filter 0.12s ease; }
-        .btn-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
-        .btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 0.65rem 1.2rem; border-radius: var(--radius-pill); border: 1px solid var(--border); background: #fff; color: #374151; font-size: 0.9rem; text-decoration: none; transition: transform 0.12s ease, background 0.12s ease; }
-        .btn-secondary:hover { background: #f3f4f6; transform: translateY(-1px); }
-        .hero-note { font-size: 0.8rem; color: var(--muted); width: 100%; }
-        .hero-aside { position: relative; min-height: 250px; }
-        .hero-orbit { position: absolute; inset: 0; margin: auto; width: 250px; height: 250px; }
-        .hero-orbit svg { width: 100%; height: 100%; overflow: visible; }
-        .orbit-spin { transform-origin: 100px 100px; animation: orbitSpin 9s linear infinite; }
-        .orbit-spin2 { transform-origin: 100px 100px; animation: orbitSpin 15s linear infinite reverse; }
-        @keyframes orbitSpin { to { transform: rotate(360deg); } }
-
-        /* Stats */
-        .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
-        .stat { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.1rem 1rem; text-align: center; box-shadow: 0 10px 26px rgba(15,23,42,0.03); }
-        .stat-num { font-size: 1.95rem; font-weight: 700; color: var(--accent); line-height: 1; }
-        .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
-
-        /* Tiles (What I do, Who I help) */
-        .tiles { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
-        .tiles-2 { grid-template-columns: repeat(2,1fr); }
-        .tile { display: block; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.2rem; box-shadow: 0 10px 26px rgba(15,23,42,0.03); text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
-        .tile:hover { transform: translateY(-3px); box-shadow: 0 20px 42px rgba(15,23,42,0.1); border-color: #cbd5f5; }
-        .tile-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; }
-        .tile-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-        .tile-title { font-weight: 600; font-size: 1.02rem; margin-bottom: 0.25rem; }
-        .tile-text { font-size: 0.88rem; color: var(--muted); }
-        .more-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--accent); font-weight: 600; font-size: 0.92rem; text-decoration: none; white-space: nowrap; }
-        .more-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; transition: transform 0.15s ease; }
-        .more-link:hover svg { transform: translateX(3px); }
-
-        /* HumbleSuite band */
-        .hs-band { border-radius: var(--radius-lg); padding: 2rem 1.9rem; background: radial-gradient(circle at 0% 0%, #1e3a8a 0, #0b1220 58%); color: #e5e7eb; box-shadow: 0 22px 55px rgba(15,23,42,0.45); position: relative; overflow: hidden; }
-        .hs-band-inner { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); gap: 1.8rem; align-items: center; position: relative; z-index: 1; }
-        .hs-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 600; color: #93c5fd; letter-spacing: 0.04em; margin-bottom: 0.7rem; }
-        .hs-tag svg { width: 30px; height: 30px; }
-        .hs-title { font-size: 1.85rem; margin-bottom: 0.6rem; color: #fff; }
-        .hs-sub { color: #cbd5e1; font-size: 0.97rem; margin-bottom: 0.9rem; }
-        .hs-points { list-style: none; margin-bottom: 1.1rem; }
-        .hs-points li { font-size: 0.9rem; color: #e2e8f0; margin-bottom: 0.45rem; padding-left: 1.4rem; position: relative; }
-        .hs-points li::before { content: "✓"; position: absolute; left: 0; color: #60a5fa; font-weight: 700; }
-        .hs-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-        .hs-btn { background: #fff; color: #0b1220; }
-        .hs-btn:hover { filter: brightness(0.96); transform: translateY(-1px); }
-        .hs-band .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
-        .hs-band .btn-secondary:hover { background: rgba(255,255,255,0.12); }
-        .hs-calc { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: var(--radius-md); padding: 1.3rem; }
-        .hs-calc-label { font-size: 0.78rem; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.08em; }
-        .hs-calc-amount { font-size: 2.6rem; font-weight: 700; color: #fff; line-height: 1.1; margin-top: 0.2rem; }
-        .hs-calc-sub { font-size: 0.82rem; color: #94a3b8; margin-bottom: 0.9rem; }
-        .hs-calc input[type=range] { width: 100%; accent-color: #60a5fa; margin-bottom: 0.8rem; }
-        .hs-calc-row { display: flex; justify-content: space-between; font-size: 0.88rem; color: #cbd5e1; padding: 0.35rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
-        .hs-calc-row strong { color: #fff; }
-        .hs-calc-note { font-size: 0.76rem; color: #94a3b8; margin-top: 0.7rem; }
-
-        /* Offer */
-        .offer { border-radius: var(--radius-lg); padding: 1.75rem 1.6rem; background: radial-gradient(circle at top left, #dbeafe 0, #eff6ff 40%, #ffffff 80%); box-shadow: var(--shadow-soft); display: grid; grid-template-columns: minmax(0,1.6fr) minmax(0,1fr); gap: 1.5rem; align-items: center; }
-        .offer-title { font-size: 1.35rem; margin-bottom: 0.5rem; }
-        .offer-body { font-size: 0.96rem; color: #374151; }
-        .offer-body p { margin-bottom: 0.6rem; }
-        .offer-cta { text-align: center; }
-        .offer-cta .btn-primary { width: 100%; }
-        .offer-cta-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
-
-        /* Featured testimonial */
-        .feature-quote { background: var(--bg-alt); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius-md); padding: 1.4rem 1.6rem; box-shadow: 0 10px 26px rgba(15,23,42,0.03); }
-        .feature-quote .quote { font-size: 1.08rem; font-style: italic; color: #374151; margin-bottom: 0.7rem; }
-        .feature-quote .who { font-weight: 600; }
-        .feature-quote .meta { font-size: 0.84rem; color: var(--muted); }
-
-        /* Contact */
-        .contact { background: #020617; color: #e5e7eb; border-radius: var(--radius-lg); padding: 1.9rem 1.7rem; box-shadow: 0 18px 50px rgba(15,23,42,0.8); }
-        .contact-title { font-size: 1.5rem; margin-bottom: 0.6rem; }
-        .contact-body { font-size: 0.98rem; margin-bottom: 1rem; color: #cbd5e1; max-width: 640px; }
-        .contact-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
-        .contact-email { display: inline-flex; align-items: center; padding: 0.6rem 1.2rem; border-radius: var(--radius-pill); background: #f9fafb; color: #111827; font-size: 0.95rem; font-weight: 600; text-decoration: none; }
-        .contact-email:hover { background: #e5e7eb; }
-        .contact-text { display: inline-flex; align-items: center; padding: 0.6rem 1.2rem; border-radius: var(--radius-pill); background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); font-size: 0.95rem; font-weight: 600; text-decoration: none; }
-        .contact-text:hover { background: rgba(255,255,255,0.12); }
-        .contact-note { margin-top: 0.7rem; font-size: 0.85rem; color: #9ca3af; }
-
-        footer { border-top: 1px solid var(--border); margin-top: 1rem; }
-        .footer-inner { max-width: var(--max-width); margin: 0 auto; padding: 1.6rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-        .footer-links { display: flex; flex-wrap: wrap; gap: 0.9rem; font-size: 0.85rem; }
-        .footer-links a { color: #6b7280; text-decoration: none; border-bottom: 1px solid transparent; }
-        .footer-links a:hover { border-color: #9ca3af; color: var(--text); }
-        .footer-copy { font-size: 0.8rem; color: #9ca3af; }
-
-        .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.in { opacity: 1; transform: none; }
-
-        .manifesto { background: linear-gradient(135deg, #eff6ff, #ffffff 72%); border: 1px solid var(--accent-soft); border-radius: var(--radius-lg); padding: 2.3rem 2rem; text-align: center; box-shadow: var(--shadow-soft); }
-        .manifesto .label { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.8rem; }
-        .manifesto p { font-size: 1.32rem; line-height: 1.5; color: var(--text); max-width: 760px; margin: 0 auto; font-weight: 500; }
-        .manifesto strong { color: var(--accent); }
-
-        @media (max-width: 900px) {
-            .hero { grid-template-columns: minmax(0,1fr); }
-            .hero-aside { display: none; }
-            .stats { grid-template-columns: repeat(2,1fr); }
-            .tiles { grid-template-columns: repeat(2,1fr); }
-            .hs-band-inner { grid-template-columns: 1fr; }
-            .offer { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 640px) {
-            .nav-inner { flex-direction: column; align-items: flex-start; }
-            nav { flex-wrap: wrap; justify-content: flex-start; gap: 0.7rem; }
-            .hero { padding: 1.5rem 1.2rem; }
-            .hero-title { font-size: 1.9rem; }
-            .tiles, .tiles-2, .stats { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: repeat(2,1fr); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            * { animation: none !important; transition: none !important; }
-            .reveal { opacity: 1 !important; transform: none !important; }
-        }
-</style>
+<link rel="stylesheet" href="/assets/poiseops.css"/>
 </head>
 <body>
 <header>
@@ -262,7 +83,7 @@
 <!-- HERO -->
 <section class="hero" id="home">
 <div>
-<div class="hero-kicker" id="heroKicker">You are supposed to be the point of control, not the bottleneck.</div>
+<div class="hero-kicker" id="heroKicker">Welcome to PoiseOps</div>
 <h1 class="hero-title">Bring your work back into Poise.</h1>
 <p class="hero-sub">
                 You are the one holding it all together, and somewhere along the way you became the bottleneck.
@@ -271,7 +92,7 @@
                 built HumbleSuite.
             </p>
 <div class="hero-actions">
-<a class="btn-primary" href="/services/">Explore services</a>
+<a class="btn-primary" href="/services/">See what I do</a>
 <a class="btn-secondary" href="/humblesuite/">See HumbleSuite</a>
 <a class="btn-secondary" href="/contact/">Get in touch</a>
 <span class="hero-note">Email or text me. I reply personally, no bots.</span>
@@ -290,171 +111,51 @@
 </div>
 </div>
 </section>
-<!-- STATS -->
-<section class="stats reveal" id="stats" aria-label="PoiseOps at a glance">
-<div class="stat"><div class="stat-num" data-count="10" data-suffix="+">0</div><div class="stat-label">years in grants and finance</div></div>
-<div class="stat"><div class="stat-num" data-count="200" data-suffix="+">0</div><div class="stat-label">tools HumbleSuite replaces</div></div>
-<div class="stat"><div class="stat-num" data-count="1">0</div><div class="stat-label">login to run it all</div></div>
-<div class="stat"><div class="stat-num" data-count="100" data-suffix="%">0</div><div class="stat-label">founder built and run</div></div>
-</section>
-<!-- MANIFESTO -->
-<section id="believe" class="reveal">
-<div class="manifesto">
-<div class="label">What I believe</div>
-<p>The people doing the real work deserve tools and an ally on their side, not another bill and another bot. I build to hand you back your <strong>time</strong> and your <strong>control</strong>, and to put enterprise grade power in the hands of the people the software giants overlook.</p>
-</div>
-</section>
-<!-- WHAT I DO -->
-<section id="what" class="reveal">
+<!-- PAGE BUTTONS -->
+<section id="explore" class="reveal">
 <div class="section-head">
 <div>
-<div class="section-label">What I do</div>
-<h2 class="section-title">Software and systems that fit how you work</h2>
+<div class="section-label">Explore</div>
+<h2 class="section-title">Where would you like to start?</h2>
 </div>
-<a class="more-link" href="/services/">See all services <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="tiles">
-<a class="tile" href="/services/">
-<div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"></path></svg></div>
-<div class="tile-title">Custom software development</div>
-<div class="tile-text">Web apps, internal tools and the software that does not exist off the shelf.</div>
+<div class="nav-cards">
+<a class="nav-card" href="/services/">
+<div class="nc-icon"><svg viewBox="0 0 24 24"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"></path></svg></div>
+<h3>Services</h3>
+<p>Custom software, AI, automation, dashboards, SEO and business formation.</p>
+<span class="nc-go">View services <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
-<a class="tile" href="/services/">
-<div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z"></path><circle cx="18" cy="17" r="1.4"></circle></svg></div>
-<div class="tile-title">AI expert and AI builds</div>
-<div class="tile-text">AI assistants and automations built right into your tools, not just talk.</div>
+<a class="nav-card featured" href="/humblesuite/">
+<div class="nc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"></circle><circle cx="12" cy="12" r="2.2" fill="#93c5fd" stroke="none"></circle><circle cx="17.3" cy="6.7" r="2" fill="#93c5fd" stroke="none"></circle></svg></div>
+<h3>HumbleSuite</h3>
+<p>My all in one business platform. Replace around 200 tools for $9.99 a month.</p>
+<span class="nc-go">See the platform <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
-<a class="tile" href="/services/">
-<div class="tile-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 8l9 6 9-6"></path></svg></div>
-<div class="tile-title">Automation and email</div>
-<div class="tile-text">Inbox, follow ups and busywork handled by smart, reliable flows.</div>
+<a class="nav-card" href="/industries/">
+<div class="nc-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><path d="M16 6a3 3 0 0 1 0 6M21 20a6 6 0 0 0-5-5.9"></path></svg></div>
+<h3>Who I help</h3>
+<p>Service businesses, nonprofits and universities, ops and finance leaders, AI-ready teams.</p>
+<span class="nc-go">See if it is you <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
-<a class="tile" href="/services/">
-<div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M5 21V11M12 21V5M19 21v-7"></path><path d="M3 21h18"></path></svg></div>
-<div class="tile-title">Dashboards and data</div>
-<div class="tile-text">Clean data and clear dashboards in Power BI, Tableau and SQL you can trust.</div>
+<a class="nav-card" href="/about/">
+<div class="nc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></div>
+<h3>About</h3>
+<p>My story, a decade in grants and finance, and why I do this work.</p>
+<span class="nc-go">Meet Steven <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
-<a class="tile" href="/services/">
-<div class="tile-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><path d="M20 20l-3.6-3.6"></path><path d="M9 12l1.6 1.6L14 10"></path></svg></div>
-<div class="tile-title">SEO management</div>
-<div class="tile-text">Show up when customers search, with steady, honest SEO that compounds.</div>
+<a class="nav-card" href="/contact/">
+<div class="nc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 8l9 6 9-6"></path></svg></div>
+<h3>Get in touch</h3>
+<p>Email or text me. I reply personally, no bots, no giant intake forms.</p>
+<span class="nc-go">Contact me <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
-<a class="tile" href="/services/">
-<div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14"></path><path d="M4 21h16"></path><path d="M10 21v-5h4v5"></path></svg></div>
-<div class="tile-title">Form your LLC</div>
-<div class="tile-text">Start your business right, from formation and EIN to your first invoice.</div>
+<a class="nav-card" href="/contact/">
+<div class="nc-icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6 6 .5-4.5 4 1.5 6-5.5-3.5L6 19.5 7.5 13.5 3 9.5l6-.5z"></path></svg></div>
+<h3>Founding client offer</h3>
+<p>Be one of the first. Founding clients get my best rate. Mention "go big."</p>
+<span class="nc-go">Claim a spot <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
-</div>
-</section>
-<!-- CREATOR OF HUMBLESUITE -->
-<section id="humblesuite" class="reveal">
-<div class="hs-band">
-<div class="hs-band-inner">
-<div class="hs-copy">
-<div class="hs-tag">
-<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="15" stroke="#60a5fa" stroke-width="2.5"></circle><circle cx="24" cy="24" r="4.5" fill="#e5e7eb"></circle><circle cx="34.6" cy="13.4" r="4" fill="#93c5fd"></circle></svg>
-                        Built by PoiseOps
-                    </div>
-<h2 class="hs-title">I did not just consult on software. I built the whole platform.</h2>
-<p class="hs-sub">
-                        HumbleSuite is the all in one business platform I built to replace the pile of expensive tools
-                        most businesses rent every month. CRM, invoicing, scheduling, websites, email, reporting and
-                        around 200 tools worth of features, all behind one login.
-                    </p>
-<ul class="hs-points">
-<li>Starts at $9.99 a month for your whole team. No per seat fees, ever.</li>
-<li>180 day money back guarantee and free setup with a real engineer.</li>
-<li>Free migration, 40 hours of training, and your data is always yours.</li>
-</ul>
-<div class="hs-actions">
-<a class="btn-primary hs-btn" href="https://humblesuite.com/demo" target="_blank" rel="noopener">Try the live demo</a>
-<a class="btn-secondary" href="/humblesuite/">See everything it does</a>
-<a class="btn-secondary" href="https://humblesuite.com/register" target="_blank" rel="noopener">Start free</a>
-<a class="btn-secondary" href="mailto:contact@poiseops.com?subject=HumbleSuite%20-%20Custom%20demo%20link&amp;body=Hi%20Steven%2C%0A%0AI%27d%20like%20my%20own%20custom%20HumbleSuite%20demo%20link%20to%20try%20it%20free.%0A%0ABusiness%20name%3A%0AWhat%20I%20run%20now%20(software%20I%20pay%20for)%3A%0ATeam%20size%3A%0A%0AThanks%2C%0A">Get your own demo link</a>
-</div>
-</div>
-<div class="hs-calc">
-<div class="hs-calc-label">How much are you giving away?</div>
-<div class="hs-calc-amount" id="hsSavings">$8,280</div>
-<div class="hs-calc-sub">kept in your pocket per year, roughly</div>
-<input type="range" id="hsSpend" min="100" max="5000" step="50" value="800" aria-label="Your current monthly software spend"/>
-<div class="hs-calc-row"><span>You spend now</span><strong id="hsNow">$800/mo</strong></div>
-<div class="hs-calc-row"><span>HumbleSuite</span><strong>from $9.99/mo</strong></div>
-<div class="hs-calc-note">Same price whether you have 2 people or 200. Drag to see your number.</div>
-</div>
-</div>
-</div>
-</section>
-<!-- WHO I HELP -->
-<section id="who" class="reveal">
-<div class="section-head">
-<div>
-<div class="section-label">Who I help</div>
-<h2 class="section-title">Is PoiseOps right for you</h2>
-</div>
-<a class="more-link" href="/industries/">See how I help your world <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-<div class="tiles tiles-2">
-<a class="tile" href="/industries/">
-<div class="tile-title">Service businesses</div>
-<div class="tile-text">Restaurants, trades, clinics, salons and agencies that want bookings, messages and admin under control.</div>
-</a>
-<a class="tile" href="/industries/">
-<div class="tile-title">Nonprofits, universities and research</div>
-<div class="tile-text">Grant funded and public sector teams juggling sponsors, compliance and reporting.</div>
-</a>
-<a class="tile" href="/industries/">
-<div class="tile-title">Operations, finance and analytics leaders</div>
-<div class="tile-text">The person who keeps everything moving, drowning in email, approvals, Excel and SQL.</div>
-</a>
-<a class="tile" href="/industries/">
-<div class="tile-title">Teams ready to use AI in real work</div>
-<div class="tile-text">Curious about AI but not sure where it actually fits or where it does not.</div>
-</a>
-</div>
-</section>
-<!-- FOUNDING OFFER -->
-<section id="offer" class="reveal">
-<div class="offer">
-<div>
-<div class="section-label">Founding client offer</div>
-<h2 class="offer-title">Go big or go home: be a founding client</h2>
-<div class="offer-body">
-<p>To launch PoiseOps, I am opening a small founding client group. The first area of work we fix together is scoped at a lower, one time founding rate than I will charge later.</p>
-<p>You let me into the mess. I design and build a calmer, automated system around it. You get your time, your mental space and a little more margin back.</p>
-</div>
-</div>
-<div class="offer-cta">
-<a class="btn-primary" href="mailto:contact@poiseops.com?subject=PoiseOps%20founding%20client%20-%20go%20big&amp;body=Hi%20Steven%2C%0A%0AI%27d%20like%20to%20be%20a%20founding%20client%20(go%20big).%0A%0AWhat%20feels%20heaviest%20right%20now%3A%0ABusiness%2Fteam%3A%0A%0AThanks%2C%0A">Email me "go big"</a>
-<div class="offer-cta-note">Mention "go big" in your message to be considered.</div>
-</div>
-</div>
-</section>
-<!-- FEATURED TESTIMONIAL -->
-<section id="story" class="reveal">
-<div class="section-head">
-<div><div class="section-label">Results and stories</div><h2 class="section-title">What working together feels like</h2></div>
-<a class="more-link" href="/about/">More about PoiseOps <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-<div class="feature-quote">
-<p class="quote">"Before working with Steven, Excel honestly intimidated me. He slowed everything down, explained the why as much as the how and never made me feel stupid for asking basic questions. Now I build my own pivot tables, run macros and keep learning new tricks every session."</p>
-<div class="who">Carmen Garcia</div>
-<div class="meta">Anschutz Medical Campus, AI coaching and Excel</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section id="contact" class="reveal">
-<div class="contact">
-<h2 class="contact-title">Ready to bring your work back into Poise.</h2>
-<div class="contact-body">
-                If you are tired of living in your inbox, chasing grants and approvals, or rebuilding the same reports
-                every month, let us fix the system instead of just the symptoms. Tell me what feels heaviest right now.
-            </div>
-<div class="contact-actions">
-<a class="contact-email" href="mailto:contact@poiseops.com?subject=PoiseOps%20-%20New%20project%20inquiry&amp;body=Hi%20Steven%2C%0A%0AI%20found%20you%20via%20poiseops.com%20and%20I%27d%20like%20help%20with%3A%0A%0A1%29%20%0A%0ABusiness%2Fteam%3A%0ALocation%3A%0ATools%3A%0ATimeline%3A%0A%0AThanks%2C%0A" aria-label="Email contact@poiseops.com">contact@poiseops.com</a>
-<a class="contact-text" href="sms:+17192860458" aria-label="Text Steven at 719-286-0458">Text Steven</a>
-</div>
-<div class="contact-note">I reply personally. No bots, no giant intake forms.</div>
 </div>
 </section>
 </main>
@@ -475,58 +176,16 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
     var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    // Scroll reveal
     (function () {
         var reveals = document.querySelectorAll(".reveal");
         if (reduceMotion || !("IntersectionObserver" in window)) { reveals.forEach(function (el) { el.classList.add("in"); }); return; }
-        var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-        }, { threshold: 0.12 });
+        var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: 0.1 });
         reveals.forEach(function (el) { io.observe(el); });
     })();
-
-    // Count-up stats
-    (function () {
-        var nums = document.querySelectorAll(".stat-num[data-count]");
-        function run(el) {
-            var target = parseInt(el.getAttribute("data-count"), 10) || 0;
-            var suffix = el.getAttribute("data-suffix") || "";
-            if (reduceMotion) { el.textContent = target + suffix; return; }
-            var dur = 1100, t0 = null;
-            function tick(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / dur, 1); el.textContent = Math.round(p * target) + suffix; if (p < 1) requestAnimationFrame(tick); }
-            requestAnimationFrame(tick);
-        }
-        if ("IntersectionObserver" in window) {
-            var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }); }, { threshold: 0.5 });
-            nums.forEach(function (el) { io.observe(el); });
-        } else { nums.forEach(run); }
-    })();
-
-    // HumbleSuite savings slider
-    (function () {
-        var spend = document.getElementById("hsSpend");
-        if (!spend) return;
-        var fmt = function (n) { return "$" + Math.round(n).toLocaleString(); };
-        function update() {
-            var m = +spend.value;
-            var now = document.getElementById("hsNow"); var sav = document.getElementById("hsSavings");
-            if (now) now.textContent = fmt(m) + "/mo";
-            if (sav) sav.textContent = fmt(Math.max(0, m * 12 - 9.99 * 12));
-        }
-        spend.addEventListener("input", update); update();
-    })();
-
-    // Rotating hero kicker
     (function () {
         var el = document.getElementById("heroKicker");
         if (!el || reduceMotion) return;
-        var lines = [
-            "You are supposed to be the point of control, not the bottleneck.",
-            "Point of control at your fingertips.",
-            "Your work in flow, not in flames.",
-            "Less busywork. More breathing room."
-        ];
+        var lines = ["Welcome to PoiseOps", "Point of control at your fingertips.", "Your work in flow, not in flames.", "Software, automation, AI and analytics."];
         var i = 0;
         setInterval(function () { i = (i + 1) % lines.length; el.style.opacity = "0"; setTimeout(function () { el.textContent = lines[i]; el.style.opacity = "1"; }, 300); }, 4200);
     })();

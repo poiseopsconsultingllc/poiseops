@@ -14,9 +14,36 @@
 <meta content="Start free, pay what fits your budget, or trade old school. Honest pricing with no surprises." property="og:description"/>
 <meta content="https://poiseops.com/pricing/" property="og:url"/>
 <meta content="website" property="og:type"/>
-<link rel="stylesheet" href="/assets/poiseops.css?v=2"/>
+<meta content="https://poiseops.com/assets/og/poiseops-og.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://poiseops.com/assets/og/poiseops-og.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "PoiseOps", "item": "https://poiseops.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://poiseops.com/pricing/" }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/poiseops.css?v=3"/>
 </head>
 <body>
+<div class="announce" id="announceBar" hidden>
+<a href="/contact/">America 250 launch week: founding client openings through July 11. Say "go big" on your free call.</a>
+<button class="announce-close" type="button" aria-label="Dismiss announcement">&#215;</button>
+</div>
+<script>
+(function () {
+  var b = document.getElementById("announceBar");
+  try { if (localStorage.getItem("poAnnounceClosed") !== "1") b.hidden = false; } catch (e) { b.hidden = false; }
+  b.querySelector(".announce-close").addEventListener("click", function () {
+    b.hidden = true;
+    try { localStorage.setItem("poAnnounceClosed", "1"); } catch (e) {}
+  });
+})();
+</script>
 <header>
 <div class="nav-inner">
 <a class="brand" href="/" aria-label="PoiseOps Consulting LLC home">

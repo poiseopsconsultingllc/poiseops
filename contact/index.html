@@ -14,6 +14,9 @@
 <meta content="Call or text 720-841-3988, email, or send a short message. Steven replies personally, often the same day. Open seven days a week." property="og:description"/>
 <meta content="https://poiseops.com/contact/" property="og:url"/>
 <meta content="website" property="og:type"/>
+<meta content="https://poiseops.com/assets/og/poiseops-og.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://poiseops.com/assets/og/poiseops-og.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,9 +34,23 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/poiseops.css?v=2"/>
+<link rel="stylesheet" href="/assets/poiseops.css?v=3"/>
 </head>
 <body>
+<div class="announce" id="announceBar" hidden>
+<a href="/contact/">America 250 launch week: founding client openings through July 11. Say "go big" on your free call.</a>
+<button class="announce-close" type="button" aria-label="Dismiss announcement">&#215;</button>
+</div>
+<script>
+(function () {
+  var b = document.getElementById("announceBar");
+  try { if (localStorage.getItem("poAnnounceClosed") !== "1") b.hidden = false; } catch (e) { b.hidden = false; }
+  b.querySelector(".announce-close").addEventListener("click", function () {
+    b.hidden = true;
+    try { localStorage.setItem("poAnnounceClosed", "1"); } catch (e) {}
+  });
+})();
+</script>
 <header>
 <div class="nav-inner">
 <a class="brand" href="/" aria-label="PoiseOps Consulting LLC home">
@@ -85,15 +102,17 @@
 <div class="contact-grid">
 <div class="form-card">
 <h2 class="section-title" style="font-size:1.3rem;margin-bottom:0.3rem;">Send a short message</h2>
-<p class="form-note" style="margin-top:0;margin-bottom:1rem;">Four quick fields. When you send it, it opens a pre-filled email straight to me. I reply within one business day.</p>
+<p class="form-note" style="margin-top:0;margin-bottom:1rem;">Four quick fields. Hit send and your note comes straight to me. I reply within one business day.</p>
 <form id="cform">
 <div class="field"><label for="cf-name">Your name</label><input id="cf-name" type="text" autocomplete="name" required/></div>
 <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" autocomplete="email" required/></div>
 <div class="field"><label for="cf-phone">Phone (optional)</label><input id="cf-phone" type="tel" autocomplete="tel"/></div>
 <div class="field"><label for="cf-msg">What feels heaviest right now?</label><textarea id="cf-msg" required></textarea></div>
 <button class="btn-primary" type="submit" style="width:100%;">Send it to Steven</button>
+<p class="form-note" id="cf-status" role="status" aria-live="polite"></p>
 <p class="form-note">Want the founding client rate? Add the words "go big" in your message.</p>
 </form>
+<p class="form-note">Prefer email? Write me any time at <a href="mailto:contact@poiseops.com" style="color:var(--accent);">contact@poiseops.com</a>.</p>
 </div>
 <div class="info-card">
 <div class="info-row">
@@ -194,9 +213,25 @@
       var email = (document.getElementById("cf-email").value || "").trim();
       var phone = (document.getElementById("cf-phone").value || "").trim();
       var msg = (document.getElementById("cf-msg").value || "").trim();
-      var subject = "PoiseOps inquiry from " + (name || "website");
-      var body = "Name: " + name + "\nEmail: " + email + "\nPhone: " + phone + "\n\nWhat feels heaviest:\n" + msg + "\n";
-      window.location.href = "mailto:contact@poiseops.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      var message = phone ? "Phone: " + phone + "\n\n" + msg : msg;
+      var status = document.getElementById("cf-status");
+      var btn = f.querySelector("button[type=submit]");
+      btn.disabled = true;
+      status.textContent = "Sending...";
+      function fail() {
+        btn.disabled = false;
+        status.textContent = "That did not go through. Use the email link just below the form and your note will still reach me.";
+      }
+      fetch("https://humblesuite.com/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name, email: email, company: "", size: "", message: message })
+      }).then(function (r) {
+        if (!r.ok) { fail(); return; }
+        btn.disabled = false;
+        f.reset();
+        status.textContent = "Sent. I will reply within one business day.";
+      }, fail);
     });
   })();
 </script>

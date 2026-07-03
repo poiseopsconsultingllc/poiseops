@@ -32,7 +32,7 @@ header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.9
 .brand-text { display: flex; flex-direction: column; gap: 0.02rem; }
 .brand-title { font-weight: 700; font-size: 1.08rem; letter-spacing: -0.01em; color: var(--text); line-height: 1.1; }
 .brand-tagline { font-size: 0.72rem; color: var(--muted); }
-nav { display: flex; align-items: center; gap: 1.1rem; font-size: 0.9rem; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: 1.1rem; font-size: 0.9rem; }
 nav a { text-decoration: none; color: #374151; padding-bottom: 0.1rem; border-bottom: 1px solid transparent; }
 nav a:hover { border-color: #9ca3af; }
 nav a.active { color: var(--accent); border-color: var(--accent); }
@@ -327,3 +327,10 @@ footer { border-top: 1px solid var(--border); margin-top: 1rem; }
 .founder-name { font-weight: 700; font-size: 1.02rem; }
 .founder-title { font-size: 0.86rem; color: var(--muted); }
 @media (max-width: 640px) { .portrait { float: none; width: 100%; max-width: 280px; margin: 0 auto 1rem; } }
+
+/* Announcement bar */
+.announce { display: flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.4rem 1rem; background: #0b1220; color: #e5e7eb; font-size: 0.85rem; text-align: center; }
+.announce a { color: #93c5fd; text-decoration: none; font-weight: 600; }
+.announce a:hover { text-decoration: underline; }
+.announce-close { background: none; border: 0; color: #94a3b8; font-size: 1.15rem; line-height: 1; cursor: pointer; padding: 0 0.2rem; }
+.announce-close:hover { color: #fff; }
